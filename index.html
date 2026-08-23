@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chromium</title>
+
+    <link rel="icon" href="/public/favicon.svg">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="browser">
+
+    <!-- Chrome-style tab bar -->
+    <header class="tab-bar">
+
+        <div class="window-controls">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="tabs" class="tabs"></div>
+
+        <button id="new-tab" class="new-tab" title="New tab">
+            +
+        </button>
+
+    </header>
+
+
+    <!-- Browser toolbar -->
+    <nav class="toolbar">
+
+        <div class="navigation">
+
+            <button id="back" class="toolbar-button">
+                ←
+            </button>
+
+            <button id="forward" class="toolbar-button">
+                →
+            </button>
+
+            <button id="reload" class="toolbar-button">
+                ↻
+            </button>
+
+        </div>
+
+
+        <form id="address-form" class="address-bar">
+
+            <span class="address-icon">⌕</span>
+
+            <input
+                id="address"
+                type="text"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="Search Google or type a URL"
+            >
+
+            <button
+                type="button"
+                id="clear"
+                class="address-clear"
+            >
+                ×
+            </button>
+
+        </form>
+
+
+        <button id="home" class="toolbar-button">
+            ⌂
+        </button>
+
+        <button id="menu" class="toolbar-button">
+            ⋮
+        </button>
+
+    </nav>
+
+
+    <!-- Browser viewport -->
+    <main class="viewport">
+
+        <!-- New tab page -->
+        <section id="new-tab-page" class="new-tab-page">
+
+            <div class="logo">
+                C
+            </div>
+
+            <h1>
+                Chromium
+            </h1>
+
+            <p>
+                Fast. Private. Simple.
+            </p>
+
+
+            <form id="search-form" class="main-search">
+
+                <span>⌕</span>
+
+                <input
+                    id="search-input"
+                    type="text"
+                    autocomplete="off"
+                    placeholder="Search or enter a web address"
+                >
+
+                <button type="submit">
+                    Go
+                </button>
+
+            </form>
+
+
+            <div class="shortcuts">
+
+                <button data-url="https://www.google.com">
+                    Google
+                </button>
+
+                <button data-url="https://www.youtube.com">
+                    YouTube
+                </button>
+
+                <button data-url="https://github.com">
+                    GitHub
+                </button>
+
+                <button data-url="https://www.wikipedia.org">
+                    Wikipedia
+                </button>
+
+            </div>
+
+
+            <div id="status" class="status">
+                Ultraviolet ready
+            </div>
+
+        </section>
+
+
+        <!-- Proxied webpage -->
+        <iframe
+            id="browser-frame"
+            title="Browser"
+            hidden
+        ></iframe>
+
+    </main>
+
+</div>
+
+
+<script src="/uv/uv.bundle.js"></script>
+<script src="/uv/uv.config.js"></script>
+
+<script src="/baremux/index.js"></script>
+
+<script src="/register-sw.js"></script>
+<script src="/search.js"></script>
+<script src="/app.js"></script>
+
+</body>
+</html>
